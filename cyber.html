@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Free VIP - 专业版功能体验工具</title>
+    <style>
+        :root {
+            --primary: #4a6bdf;
+            --secondary: #6c757d;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --info: #17a2b8;
+        }
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        h1, h2, h3, h4 {
+            color: var(--primary);
+            margin-top: 1.5em;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.3em;
+        }
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            background-color: var(--primary);
+            color: white;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .screenshot {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .system-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .system-table th, .system-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .system-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        .system-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .contributors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+        .contributor {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .support-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .support-card {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .support-card:hover {
+            transform: scale(1.05);
+        }
+        .support-img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .note-box {
+            background-color: #fff8e1;
+            border-left: 4px solid var(--warning);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .warning-box {
+            background-color: #ffebee;
+            border-left: 4px solid var(--danger);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .success-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid var(--success);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .tab-container {
+            margin: 30px 0;
+        }
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab-btn {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--secondary);
+            border-bottom: 3px solid transparent;
+        }
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .star-history {
+            width: 100%;
+            height: 300px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        pre {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            margin: 20px 0;
+        }
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            color: #333;
+        }
+        .shield-badge {
+            display: inline-block;
+            margin: 3px;
+        }
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        details {
+            margin: 15px 0;
+        }
+        details summary {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        details[open] summary {
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .support-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .system-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./images/logo.png" alt="Cursor Free VIP Logo" class="logo">
+        <h1>Cursor Free VIP</h1>
+        <h4>支持最新 0.48.x 版本 | 教育研究专用</h4>
+        
+        <div class="badges">
+            <a href="https://github.com/yeongpin/cursor-free-vip/releases/latest" target="_blank" class="shield-badge"><img src="https://img.shields.io/endpoint?url=https://www.pinnumber.rr.nu/badges/release/yeongpin/cursor-free-vip" alt="Release"></a>
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" class="shield-badge"><img src="https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey.svg" alt="License: CC BY-NC-ND 4.0"></a>
+            <a href="https://github.com/yeongpin/cursor-free-vip/stargazers" target="_blank" class="shield-badge"><img src="https://img.shields.io/endpoint?url=https://www.pinnumber.rr.nu/badges/stars/yeongpin/cursor-free-vip" alt="Stars"></a>
+            <a href="https://github.com/yeongpin/cursor-free-vip/releases/latest" target="_blank" class="shield-badge"><img src="https://img.shields.io/endpoint?url=https://www.pinnumber.rr.nu/badges/downloads/yeongpin/cursor-free-vip/total" alt="Downloads"></a>
+            <a href="https://buymeacoffee.com/yeongpin" target="_blank" class="shield-badge"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20Me-FFDA33" alt="Buy Me a Coffee"></a>
+        </div>
+        
+        <p>本工具为学习研究用途，当前版本不违反任何法律法规。请支持官方正版。</p>
+        <p>此工具不会生成任何虚假电子邮件账户和 OAuth 访问权限。</p>
+        <p>支持 Windows、macOS 和 Linux 系统。建议使用管理员权限运行以获得最佳体验。</p>
+    </header>
+
+    <img src="./images/product_2025-04-16_10-40-21.png" alt="操作界面截图" class="screenshot">
+
+
+    <section>
+        <h2>✨ 核心功能</h2>
+        <div class="feature-card">
+            <h3>全平台支持</h3>
+            <p>完美兼容 Windows (x64/x86)、macOS (Intel/苹果芯片) 和 Linux (x64/x86/ARM64) 系统</p>
+        </div>
+        <div class="feature-card">
+            <h3>一键重置配置</h3>
+            <p>快速恢复Cursor默认设置，解决各种配置问题</p>
+        </div>
+        <div class="feature-card">
+            <h3>多语言界面</h3>
+            <p>支持英文、简体中文、繁體中文和越南语四种语言</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>💻 系统支持</h2>
+        <table class="system-table">
+            <thead>
+                <tr>
+                    <th>操作系统</th>
+                    <th>架构</th>
+                    <th>支持状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Windows</td>
+                    <td>x64, x86</td>
+                    <td>✅ 完全支持</td>
+                </tr>
+                <tr>
+                    <td>macOS</td>
+                    <td>Intel, Apple Silicon</td>
+                    <td>✅ 完全支持</td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>x64, x86, ARM64</td>
+                    <td>✅ 完全支持</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>👀 使用指南</h2>
+        
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(event, 'auto-install')">自动安装</button>
+                <button class="tab-btn" onclick="openTab(event, 'manual-reset')">手动重置</button>
+            </div>
+            
+            <div id="auto-install" class="tab-content active">
+                <h3>自动安装脚本</h3>
+                
+                <h4>Linux/macOS</h4>
+                <div class="code-block">
+                    <code>curl -fsSL https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/install.sh -o install.sh && chmod +x install.sh && ./install.sh</code>
+                </div>
+                
+                <h4>Archlinux</h4>
+                <p>通过 <a href="https://aur.archlinux.org/packages/cursor-free-vip-git" target="_blank">AUR</a> 安装</p>
+                <div class="code-block">
+                    <code>yay -S cursor-free-vip-git</code>
+                </div>
+                
+                <h4>Windows</h4>
+                <div class="code-block">
+                    <code>irm https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/install.ps1 | iex</code>
+                </div>
+            </div>
+            
+            <div id="manual-reset" class="tab-content">
+                <h3>手动重置方案</h3>
+                
+                <h4>Linux/macOS</h4>
+                <div class="code-block">
+                    <code>curl -fsSL https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/reset.sh | sudo bash</code>
+                </div>
+                
+                <h4>Windows</h4>
+                <div class="code-block">
+                    <code>irm https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/reset.ps1 | iex</code>
+                </div>
+            </div>
+        </div>
+        
+        <div class="warning-box">
+            <p><strong>注意：</strong>要停止脚本运行，请按 Ctrl+C</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>❗ 注意事项</h2>
+        <div class="note-box">
+            <p><strong>配置文件路径：</strong>各系统文档目录/.cursor-free-vip/config.ini</p>
+        </div>
+        
+        <details>
+            <summary>⭐ 文件配置详情</summary>
+            <pre>
+[Chrome]
+# Default Google Chrome Path | 默認Google Chrome 遊覽器路徑
+chromepath = C:\Program Files\Google/Chrome/Application/chrome.exe
+
+[Turnstile]
+# Handle Turnstile Wait Time | 等待人機驗證時間
+handle_turnstile_time = 2
+# Handle Turnstile Wait Random Time (must merge 1-3 or 1,3) | 等待人機驗證隨機時間（必須是 1-3 或者 1,3 這樣的組合）
+handle_turnstile_random_time = 1-3
+
+[OSPaths]
+# Storage Path | 存儲路徑
+storage_path = /Users/username/Library/Application Support/Cursor/User/globalStorage/storage.json
+# SQLite Path | SQLite路徑
+sqlite_path = /Users/username/Library/Application Support/Cursor/User/globalStorage/state.vscdb
+# Machine ID Path | 機器ID路徑
+machine_id_path = /Users/username/Library/Application Support/Cursor/machineId
+# For Linux users: ~/.config/cursor/machineid
+
+[Timing]
+# Min Random Time | 最小隨機時間
+min_random_time = 0.1
+# Max Random Time | 最大隨機時間
+max_random_time = 0.8
+# Page Load Wait | 頁面加載等待時間
+page_load_wait = 0.1-0.8
+# Input Wait | 輸入等待時間
+input_wait = 0.3-0.8
+# Submit Wait | 提交等待時間
+submit_wait = 0.5-1.5
+# Verification Code Input | 驗證碼輸入等待時間
+verification_code_input = 0.1-0.3
+# Verification Success Wait | 驗證成功等待時間
+verification_success_wait = 2-3
+# Verification Retry Wait | 驗證重試等待時間
+verification_retry_wait = 2-3
+# Email Check Initial Wait | 郵件檢查初始等待時間
+email_check_initial_wait = 4-6
+# Email Refresh Wait | 郵件刷新等待時間
+email_refresh_wait = 2-4
+# Settings Page Load Wait | 設置頁面加載等待時間
+settings_page_load_wait = 1-2
+# Failed Retry Time | 失敗重試時間
+failed_retry_time = 0.5-1
+# Retry Interval | 重試間隔
+retry_interval = 8-12
+# Max Timeout | 最大超時時間
+max_timeout = 160
+
+[Utils]
+# Check Update | 檢查更新
+check_update = True
+# Show Account Info | 顯示賬號信息
+show_account_info = True
+
+[WindowsPaths]
+storage_path = C:\Users\yeongpin\AppData\Roaming\Cursor\User\globalStorage\storage.json
+sqlite_path = C:\Users\yeongpin\AppData\Roaming\Cursor\User\globalStorage\state.vscdb
+machine_id_path = C:\Users\yeongpin\AppData\Roaming\Cursor\machineId
+cursor_path = C:\Users\yeongpin\AppData\Local\Programs\Cursor\resources\app
+updater_path = C:\Users\yeongpin\AppData\Local\cursor-updater
+update_yml_path = C:\Users\yeongpin\AppData\Local\Programs\Cursor\resources\app-update.yml
+product_json_path = C:\Users\yeongpin\AppData\Local\Programs\Cursor\resources\app\product.json
+
+[Browser]
+default_browser = opera
+chrome_path = C:\Program Files\Google\Chrome\Application\chrome.exe
+edge_path = C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+firefox_path = C:\Program Files\Mozilla Firefox\firefox.exe
+brave_path = C:\Program Files\BraveSoftware/Brave-Browser/Application/brave.exe
+chrome_driver_path = D:\VisualCode\cursor-free-vip-new\drivers\chromedriver.exe
+edge_driver_path = D:\VisualCode\cursor-free-vip-new\drivers\msedgedriver.exe
+firefox_driver_path = D:\VisualCode\cursor-free-vip-new\drivers\geckodriver.exe
+brave_driver_path = D:\VisualCode\cursor-free-vip-new\drivers\chromedriver.exe
+opera_path = C:\Users\yeongpin\AppData\Local\Programs\Opera\opera.exe
+opera_driver_path = D:\VisualCode\cursor-free-vip-new\drivers\chromedriver.exe
+
+[OAuth]
+show_selection_alert = False
+timeout = 120
+max_attempts = 3
+            </pre>
+        </details>
+        
+        <div class="warning-box">
+            <h3>重要提示</h3>
+            <ul>
+                <li>必须使用管理员权限运行脚本</li>
+                <li>运行前确保完全关闭Cursor</li>
+                <li>本工具仅供学习研究使用</li>
+                <li>使用本工具时请遵守相关软件使用条款</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>🚨 常见问题</h2>
+        <table class="system-table">
+            <thead>
+                <tr>
+                    <th>问题现象</th>
+                    <th>解决方案</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>权限不足错误</td>
+                    <td>确认使用管理员权限执行</td>
+                </tr>
+                <tr>
+                    <td>"用户未授权"提示</td>
+                    <td>这意味着您的账户因使用临时邮箱而被禁用。确保使用非临时邮箱服务</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <section>
+        <h2>📩 免责声明</h2>
+        <div class="warning-box">
+            <p>本工具仅供学习和研究使用，使用本工具所产生的任何后果由使用者自行承担。</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>💰 支持开发者</h2>
+        <div class="support-section">
+            <div class="support-card">
+                <img src="./images/vx.jpg" alt="作者微信" class="support-img">
+                <p>微信：Grace_L99</p>
+            </div>
+            <div class="support-card">
+                <img src="./images/provi-code.png" alt="赞助二维码" class="support-img">
+                <p>扫码赞助</p>
+            </div>
+            <div class="support-card">
+                <img src="./images/wechat.jpg" alt="PayPal赞助" class="support-img">
+                <p>微信赞助</p>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+            }
+            
+            tabbuttons = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+            }
+            
+            document.getElementById(tabName).className += " active";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html> 
