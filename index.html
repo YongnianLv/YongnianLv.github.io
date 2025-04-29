@@ -250,13 +250,41 @@
                 overflow-x: auto;
             }
         }
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 107, 223, 0.2);
+        }
+        
+        .tab-btn.active {
+            background: var(--primary) !important;
+            color: white !important;
+            border-color: var(--primary) !important;
+        }
+        
+        .tab-btn:not(.active):hover {
+            background: var(--primary) !important;
+            color: white !important;
+        }
+        
+        .step-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-4px);
+        }
+        .price-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(74, 107, 223, 0.3);
+        }
     </style>
 </head>
 <body>
+
     <header>
         <img src="./images/logo.png" alt="Cursor Free VIP Logo" class="logo">
         <h1>Cursor Free VIP</h1>
-        <h4>支持最新 0.48.x 版本 | 教育研究专用</h4>
+        <h4>支持最新版本 | 教育研究专用</h4>
         
         <div class="badges">
             <a href="https://github.com/yeongpin/cursor-free-vip/releases/latest" target="_blank" class="shield-badge"><img src="https://img.shields.io/endpoint?url=https://www.pinnumber.rr.nu/badges/release/yeongpin/cursor-free-vip" alt="Release"></a>
@@ -271,24 +299,91 @@
         <p>支持 Windows、macOS 和 Linux 系统。建议使用管理员权限运行以获得最佳体验。</p>
     </header>
 
-    <img src="./images/product_2025-04-16_10-40-21.png" alt="操作界面截图" class="screenshot">
+    <section class="cursor-features">
+        <h2>AI 代码编辑器</h2>
+        <p class="hero-text" style="text-align: center; font-size: 1.5rem; margin: 2rem 0;">
+            旨在让你获得超凡的生产力，Cursor 是使用 AI 编写代码的最佳方式。
+        </p>
 
+        <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0;">
+            <div class="feature-card">
+                <h3>Tab，Tab，再来一次 Tab</h3>
+                <p>Cursor 会根据上下文预测你的下一步编辑，让你轻松完成修改。</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>熟知你的代码库</h3>
+                <p>从你的代码库或文档中获取答案，还能引用具体文件。一键即可应用模型生成的代码。</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>用自然语言编辑</h3>
+                <p>借助 Cursor，你可以通过简单指令来编写或修改代码。仅需一个提示，就能更新整段类或函数。</p>
+            </div>
+        </div>
 
-    <section>
-        <h2>✨ 核心功能</h2>
-        <div class="feature-card">
-            <h3>全平台支持</h3>
-            <p>完美兼容 Windows (x64/x86)、macOS (Intel/苹果芯片) 和 Linux (x64/x86/ARM64) 系统</p>
+        <div class="additional-features" style="background: #f8f9fa; padding: 3rem 0; margin: 3rem 0; border-radius: 10px;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">更多功能</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 0 2rem;">
+                <div class="feature-card">
+                    <h3>前沿智能</h3>
+                    <p>由定制化模型与前沿模型混合驱动，Cursor 既聪明又快速。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>熟悉的体验</h3>
+                    <p>一键即可导入所有扩展、主题和快捷键绑定。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>隐私选项</h3>
+                    <p>启用隐私模式后，你的代码不会储存于远程。Cursor 已通过 SOC 2 认证。</p>
+                </div>
+            </div>
         </div>
-        <div class="feature-card">
-            <h3>一键重置配置</h3>
-            <p>快速恢复Cursor默认设置，解决各种配置问题</p>
+
+        <div class="testimonials" style="margin: 4rem 0;">
+            <h2 style="text-align: center; margin-bottom: 3rem;">深受全球顶尖开发者喜爱</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="feature-card">
+                    <p style="font-style: italic;">"Cursor 至少比 Copilot 提升两倍效率。有了 AI 搭档编程非常棒，对我和团队而言都是极大的加速器。"</p>
+                    <div style="margin-top: 1rem;">
+                        <strong>Ben Bernard</strong><br>
+                        <span>Instacart</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <p style="font-style: italic;">"写代码时，Cursor 的 Tab 补全有时就像魔法一样——大约四分之一的情况能完美猜中我想做什么。"</p>
+                    <div style="margin-top: 1rem;">
+                        <strong>Kevin Whinnery</strong><br>
+                        <span>OpenAI</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <p style="font-style: italic;">"对我而言，Cursor 是近几年里工作流程提升最大的工具。"</p>
+                    <div style="margin-top: 1rem;">
+                        <strong>Sawyer Hood</strong><br>
+                        <span>Figma</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="feature-card">
-            <h3>多语言界面</h3>
-            <p>支持英文、简体中文、繁體中文和越南语四种语言</p>
+
+        <div class="trusted-by" style="text-align: center; margin: 4rem 0;">
+            <h3 style="color: var(--secondary); margin-bottom: 2rem;">由工程师信任</h3>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; opacity: 0.7;">
+                <span>Stripe</span>
+                <span>OpenAI</span>
+                <span>Johnson&Johnson</span>
+                <span>Samsung</span>
+                <span>Instacart</span>
+                <span>Spotify</span>
+                <span>Ramp</span>
+                <span>Shopify</span>
+                <span>US Foods</span>
+                <span>Mercado Libre</span>
+            </div>
         </div>
     </section>
+
 
     <section>
         <h2>💻 系统支持</h2>
@@ -318,181 +413,106 @@
                 </tr>
             </tbody>
         </table>
+        <h2>✨ 核心功能</h2>
+        <div class="feature-card">
+            <h3>无限免费试用</h3>
+            <p>无限免费试用，解决各种配置问题</p>
+        </div>
+        <div class="feature-card">
+            <h3>自定义邮箱</h3>
+            <p>支持自定义邮箱，随时接收验证码</p>
+        </div>
     </section>
 
     <section>
         <h2>👀 使用指南</h2>
         
-        <div class="tab-container">
-            <div class="tab-buttons">
-                <button class="tab-btn active" onclick="openTab(event, 'auto-install')">自动安装</button>
-                <button class="tab-btn" onclick="openTab(event, 'manual-reset')">手动重置</button>
+        <div class="guide-container" style="max-width: 1000px; margin: 2rem auto; background: white; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.1); overflow: hidden;">
+            <div class="tab-container" style="background: var(--light);">
+                <div class="tab-buttons" style="display: flex; gap: 1rem; padding: 1.5rem; border-bottom: none; background: white;">
+                    <button class="tab-btn active" onclick="openTab(event, 'auto-install')" 
+                            style="flex: 1; padding: 1rem; border-radius: 8px; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease;
+                                   background: var(--primary); color: white; border: none; cursor: pointer;">
+                        普通账户
+                    </button>
+                    <button class="tab-btn" onclick="openTab(event, 'manual-reset')"
+                            style="flex: 1; padding: 1rem; border-radius: 8px; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease;
+                                   background: var(--light); color: var(--primary); border: 2px solid var(--primary); cursor: pointer;">
+                        Vip账户
+                    </button>
+                </div>
+                
+                <div id="auto-install" class="tab-content active" style="padding: 2rem;">
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 2rem; text-align: center;">微信公众号领取</h3>
+                    
+                    <div class="steps-container" style="display: grid; gap: 2rem;">
+                        <div class="step-card" style="background: var(--light); padding: 2rem; border-radius: 12px;">
+                            <h4 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span style="background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">1</span>
+                                关注微信公众号【赛博实验室2077】
+                            </h4>
+                            <div style="text-align: center;">
+                                <img src="./公众号.png" alt="关注微信公众号" style="max-width: 300px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                        
+                        <div class="step-card" style="background: var(--light); padding: 2rem; border-radius: 12px;">
+                            <h4 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span style="background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">2</span>
+                                点击AI，免费领取会员账户
+                            </h4>
+                            <div style="text-align: center;">
+                                <img src="./会员账户.png" alt="免费领取会员账户" style="max-width: 300px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                        
+                        <div class="step-card" style="background: var(--light); padding: 2rem; border-radius: 12px;">
+                            <h4 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <span style="background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">3</span>
+                                获取登录验证码
+                            </h4>
+                            <div class="code-block" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                                <code style="color: var(--primary);">https://tempmail.plus/</code>
+                            </div>
+                            <p style="margin-bottom: 1rem; color: var(--dark);">填写邮箱前缀：cyberlabs，接收Cursor登录验证码</p>
+                            <div style="text-align: center;">
+                                <img src="./验证码.png" alt="验证码" style="max-width: 300px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="manual-reset" class="tab-content" style="padding: 2rem;">
+                    <div class="price-tag" style="
+                    background: linear-gradient(135deg, var(--primary) 0%, #6d8bf8 100%);
+                    color: white;
+                    padding: 1rem 2rem;
+                    border-radius: 50px;
+                    text-align: center;
+                    margin: 0 auto 2rem;
+                    max-width: 300px;
+                    box-shadow: 0 4px 15px rgba(74, 107, 223, 0.2);
+                    transform: scale(1);
+                    transition: transform 0.3s ease;
+                ">
+                    <div style="font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">
+                        <span style="font-size: 1.5rem;">￥</span>5
+                        <span style="font-size: 1rem; opacity: 0.8;">/月</span>
+                    </div>
+                    <div style="font-size: 1.1rem; opacity: 0.9;">无限使用</div>
+                </div>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem; text-align: center;">添加微信，付费领取VIP账户</h3>
+                    <h4 style="color: var(--secondary); text-align: center; margin-bottom: 2rem;">7x24小时技术支持，快速响应客户需求</h4>
+                    
+
+
+                    <div style="text-align: center;">
+                        <img src="./vx.jpg" alt="联系我" style="max-width: 300px; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.15);">
+                        <p style="margin-top: 1rem; color: var(--primary); font-weight: 600;">微信：Grace_L99</p>
+                    </div>
+                </div>
             </div>
-            
-            <div id="auto-install" class="tab-content active">
-                <h3>自动安装脚本</h3>
-                
-                <h4>Linux/macOS</h4>
-                <div class="code-block">
-                    <code>curl -fsSL https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/install.sh -o install.sh && chmod +x install.sh && ./install.sh</code>
-                </div>
-                
-                <h4>Archlinux</h4>
-                <p>通过 <a href="https://aur.archlinux.org/packages/cursor-free-vip-git" target="_blank">AUR</a> 安装</p>
-                <div class="code-block">
-                    <code>yay -S cursor-free-vip-git</code>
-                </div>
-                
-                <h4>Windows</h4>
-                <div class="code-block">
-                    <code>irm https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/install.ps1 | iex</code>
-                </div>
-            </div>
-            
-            <div id="manual-reset" class="tab-content">
-                <h3>手动重置方案</h3>
-                
-                <h4>Linux/macOS</h4>
-                <div class="code-block">
-                    <code>curl -fsSL https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/reset.sh | sudo bash</code>
-                </div>
-                
-                <h4>Windows</h4>
-                <div class="code-block">
-                    <code>irm https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/reset.ps1 | iex</code>
-                </div>
-            </div>
         </div>
-        
-        <div class="warning-box">
-            <p><strong>注意：</strong>要停止脚本运行，请按 Ctrl+C</p>
-        </div>
-    </section>
-
-    <section>
-        <h2>❗ 注意事项</h2>
-        <div class="note-box">
-            <p><strong>配置文件路径：</strong>各系统文档目录/.cursor-free-vip/config.ini</p>
-        </div>
-        
-        <details>
-            <summary>⭐ 文件配置详情</summary>
-            <pre>
-[Chrome]
-# Default Google Chrome Path | 默認Google Chrome 遊覽器路徑
-chromepath = C:\Program Files\Google/Chrome/Application/chrome.exe
-
-[Turnstile]
-# Handle Turnstile Wait Time | 等待人機驗證時間
-handle_turnstile_time = 2
-# Handle Turnstile Wait Random Time (must merge 1-3 or 1,3) | 等待人機驗證隨機時間（必須是 1-3 或者 1,3 這樣的組合）
-handle_turnstile_random_time = 1-3
-
-[OSPaths]
-# Storage Path | 存儲路徑
-storage_path = /Users/username/Library/Application Support/Cursor/User/globalStorage/storage.json
-# SQLite Path | SQLite路徑
-sqlite_path = /Users/username/Library/Application Support/Cursor/User/globalStorage/state.vscdb
-# Machine ID Path | 機器ID路徑
-machine_id_path = /Users/username/Library/Application Support/Cursor/machineId
-# For Linux users: ~/.config/cursor/machineid
-
-[Timing]
-# Min Random Time | 最小隨機時間
-min_random_time = 0.1
-# Max Random Time | 最大隨機時間
-max_random_time = 0.8
-# Page Load Wait | 頁面加載等待時間
-page_load_wait = 0.1-0.8
-# Input Wait | 輸入等待時間
-input_wait = 0.3-0.8
-# Submit Wait | 提交等待時間
-submit_wait = 0.5-1.5
-# Verification Code Input | 驗證碼輸入等待時間
-verification_code_input = 0.1-0.3
-# Verification Success Wait | 驗證成功等待時間
-verification_success_wait = 2-3
-# Verification Retry Wait | 驗證重試等待時間
-verification_retry_wait = 2-3
-# Email Check Initial Wait | 郵件檢查初始等待時間
-email_check_initial_wait = 4-6
-# Email Refresh Wait | 郵件刷新等待時間
-email_refresh_wait = 2-4
-# Settings Page Load Wait | 設置頁面加載等待時間
-settings_page_load_wait = 1-2
-# Failed Retry Time | 失敗重試時間
-failed_retry_time = 0.5-1
-# Retry Interval | 重試間隔
-retry_interval = 8-12
-# Max Timeout | 最大超時時間
-max_timeout = 160
-
-[Utils]
-# Check Update | 檢查更新
-check_update = True
-# Show Account Info | 顯示賬號信息
-show_account_info = True
-
-[WindowsPaths]
-storage_path = C:\Users\yeongpin\AppData\Roaming\Cursor\User\globalStorage\storage.json
-sqlite_path = C:\Users\yeongpin\AppData\Roaming\Cursor\User\globalStorage\state.vscdb
-machine_id_path = C:\Users\yeongpin\AppData\Roaming\Cursor\machineId
-cursor_path = C:\Users\yeongpin\AppData\Local\Programs\Cursor\resources\app
-updater_path = C:\Users\yeongpin\AppData\Local\cursor-updater
-update_yml_path = C:\Users\yeongpin\AppData\Local\Programs\Cursor\resources\app-update.yml
-product_json_path = C:\Users\yeongpin\AppData\Local\Programs\Cursor\resources\app\product.json
-
-[Browser]
-default_browser = opera
-chrome_path = C:\Program Files\Google\Chrome\Application\chrome.exe
-edge_path = C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
-firefox_path = C:\Program Files\Mozilla Firefox\firefox.exe
-brave_path = C:\Program Files\BraveSoftware/Brave-Browser/Application/brave.exe
-chrome_driver_path = D:\VisualCode\cursor-free-vip-new\drivers\chromedriver.exe
-edge_driver_path = D:\VisualCode\cursor-free-vip-new\drivers\msedgedriver.exe
-firefox_driver_path = D:\VisualCode\cursor-free-vip-new\drivers\geckodriver.exe
-brave_driver_path = D:\VisualCode\cursor-free-vip-new\drivers\chromedriver.exe
-opera_path = C:\Users\yeongpin\AppData\Local\Programs\Opera\opera.exe
-opera_driver_path = D:\VisualCode\cursor-free-vip-new\drivers\chromedriver.exe
-
-[OAuth]
-show_selection_alert = False
-timeout = 120
-max_attempts = 3
-            </pre>
-        </details>
-        
-        <div class="warning-box">
-            <h3>重要提示</h3>
-            <ul>
-                <li>必须使用管理员权限运行脚本</li>
-                <li>运行前确保完全关闭Cursor</li>
-                <li>本工具仅供学习研究使用</li>
-                <li>使用本工具时请遵守相关软件使用条款</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>🚨 常见问题</h2>
-        <table class="system-table">
-            <thead>
-                <tr>
-                    <th>问题现象</th>
-                    <th>解决方案</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>权限不足错误</td>
-                    <td>确认使用管理员权限执行</td>
-                </tr>
-                <tr>
-                    <td>"用户未授权"提示</td>
-                    <td>这意味着您的账户因使用临时邮箱而被禁用。确保使用非临时邮箱服务</td>
-                </tr>
-            </tbody>
-        </table>
     </section>
 
 
@@ -507,19 +527,17 @@ max_attempts = 3
         <h2>💰 支持开发者</h2>
         <div class="support-section">
             <div class="support-card">
-                <img src="./images/vx.jpg" alt="作者微信" class="support-img">
-                <p>微信：Grace_L99</p>
-            </div>
-            <div class="support-card">
-                <img src="./images/provi-code.png" alt="赞助二维码" class="support-img">
+                <img src="./provi-code.png" alt="赞助二维码" class="support-img">
                 <p>扫码赞助</p>
             </div>
             <div class="support-card">
-                <img src="./images/wechat.jpg" alt="PayPal赞助" class="support-img">
+                <img src="./wechat.jpg" alt="PayPal赞助" class="support-img">
                 <p>微信赞助</p>
             </div>
         </div>
     </section>
+
+
 
 
     <script>
