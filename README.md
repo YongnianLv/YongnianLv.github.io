@@ -49,7 +49,7 @@ Cursor 会根据上下文预测你的下一步编辑，让你轻松完成修改
    ```
    > 📌 邮箱前缀填写：cyberlabs
 
-![公众号二维码](https://via.placeholder.com/300x300?text=Scan+WeChat)
+![公众号二维码](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/%E5%85%AC%E4%BC%97%E5%8F%B7.png)
 
 ### 方法二：VIP账户（付费）
 添加微信获取稳定VIP账户：
