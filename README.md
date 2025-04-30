@@ -56,7 +56,7 @@ Cursor 会根据上下文预测你的下一步编辑，让你轻松完成修改
 
 ### 方法二：VIP账户（付费）
 添加微信获取稳定VIP账户：
-![微信](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/vx.png)
+![微信](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/vx.jpg)
 ```
 微信: Grace_L99
 ```
@@ -92,7 +92,7 @@ Cursor 会根据上下文预测你的下一步编辑，让你轻松完成修改
 
 | 支付宝 | 微信 |
 |--------|------|
-| ![支付宝](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/provi-code.png) | ![微信](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/wechat.png) |
+| ![支付宝](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/provi-code.png) | ![微信](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/wechat.jpg) |
 
 ---
 
