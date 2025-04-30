@@ -42,18 +42,21 @@ Cursor 会根据上下文预测你的下一步编辑，让你轻松完成修改
 
 ### 方法一：公众号领取
 1. 关注微信公众号【赛博实验室2077】
-2. 点击菜单"AI"→"免费领取会员账户"
-3. 使用临时邮箱接收验证码：
+2. ![公众号二维码](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/公众号.png)
+3. 点击菜单"AI"→"免费领取会员账户"
+4. ![会员账户](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/会员账户.png)
+5. 使用临时邮箱接收验证码：
+6. ![验证码](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/验证码.png)
    ```bash
    https://tempmail.plus/
    ```
    > 📌 邮箱前缀填写：cyberlabs
 
-![公众号二维码](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/公众号.png)
+
 
 ### 方法二：VIP账户（付费）
 添加微信获取稳定VIP账户：
-
+![微信](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/vx.png)
 ```
 微信: Grace_L99
 ```
@@ -89,7 +92,7 @@ Cursor 会根据上下文预测你的下一步编辑，让你轻松完成修改
 
 | 支付宝 | 微信 |
 |--------|------|
-| ![支付宝](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/provi-code.png) | ![微信](https://via.placeholder.com/200x200?text=WeChat) |
+| ![支付宝](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/provi-code.png) | ![微信](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/wechat.png) |
 
 ---
 
