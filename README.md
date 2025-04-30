@@ -49,7 +49,7 @@ Cursor 会根据上下文预测你的下一步编辑，让你轻松完成修改
    ```
    > 📌 邮箱前缀填写：cyberlabs
 
-![公众号二维码](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/%E5%85%AC%E4%BC%97%E5%8F%B7.png)
+![公众号二维码](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/公众号.png)
 
 ### 方法二：VIP账户（付费）
 添加微信获取稳定VIP账户：
@@ -89,7 +89,7 @@ Cursor 会根据上下文预测你的下一步编辑，让你轻松完成修改
 
 | 支付宝 | 微信 |
 |--------|------|
-| ![支付宝](https://via.placeholder.com/200x200?text=Alipay) | ![微信](https://via.placeholder.com/200x200?text=WeChat) |
+| ![支付宝](https://github.com/YongnianLv/YongnianLv.github.io/blob/main/provi-code.png) | ![微信](https://via.placeholder.com/200x200?text=WeChat) |
 
 ---
 
